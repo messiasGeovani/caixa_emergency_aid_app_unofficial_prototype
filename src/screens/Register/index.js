@@ -36,7 +36,6 @@ function Register({ navigation }) {
     // inputs
     const _emailInput = createRef()
     const _cityInput = createRef()
-    const _rankInput = createRef()
     
     const content = require('./content')
 
@@ -87,8 +86,6 @@ function Register({ navigation }) {
                         ref={_cityInput}
                         placeholder="Digite sua cidade"
                         onChangeText={(text) => setCity(text)}
-                        returnKeyType="next"
-                        onSubmitEditing={() => _rankInput.current.focus()}
                     />
 
                     <Title label>
@@ -96,7 +93,6 @@ function Register({ navigation }) {
                     </Title>
                     <Container input>
                         <RankInput 
-                            ref={_rankInput}
                             selectedValue={rank}
                             onValueChange={(value) => setRank(value)}
                         >
