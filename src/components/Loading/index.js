@@ -2,13 +2,27 @@
 import React from 'react'
 // styles
 import {
+    ModalContainer,
     Container,
     Title,
-    Description
+    LoadingIcon
 } from './styles'
 
-function Loading() {
-    return <Title>Loading</Title>
+function Loading({ visible }) {
+    return (
+        <ModalContainer visible={visible}>
+            <Container background>
+
+                <Container box>
+                    <LoadingIcon />
+                    <Title>
+                        Carregando...
+                    </Title>
+                </Container>
+
+            </Container>
+        </ModalContainer>
+    )
 }
 
 export default Loading

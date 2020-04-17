@@ -21,13 +21,17 @@ import {
 // components
 import Header from '../../components/Header'
 import Button from '../../components/Button'
+import Loading from '../../components/Loading'
 
 function Register({ navigation }) {
     // user data
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [city, setCity] = useState('')
-    const [rank, setRank] = useState('')
+    const [rank, setRank] = useState('Selecione uma nota')
+
+    // modal config
+    const [loading, setLoading] = useState(false)
 
     // inputs
     const _emailInput = createRef()
@@ -36,14 +40,17 @@ function Register({ navigation }) {
     
     const content = require('./content')
 
+    // send info method
     const sendInfo = () => {
-        alert('fush!')
+        setLoading(true)
+        setTimeout(() => setLoading(false), 500)
     }
 
     return (
         <AppContainer behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
             <Container main>
 
+                <Loading visible={loading} />
 
                 <Header 
                     title="Dados do cidadão" 
@@ -87,17 +94,19 @@ function Register({ navigation }) {
                     <Title label>
                         Nota
                     </Title>
-                    <RankInput 
-                        ref={_rankInput}
-                        placeholder="Digite uma nota para esse app"
-                        selection={{
-                            start: 0,
-                            end: 5
-                        }}
-                        keyboardType="numeric"
-                        returnKeyType="send"
-                        onSubmitEditing={() => sendInfo()}
-                    />
+                    <Container input>
+                        <RankInput 
+                            ref={_rankInput}
+                            selectedValue={rank}
+                            onValueChange={(value) => setRank(value)}
+                        >
+                            <RankInput.Item color="rgba(0, 0, 0, 0.2)" label="Selecione uma nota" value={null} />
+                            <RankInput.Item label="Péssimo" value="pessimo" />
+                            <RankInput.Item label="Regular" value="regular" />
+                            <RankInput.Item label="Bom" value="bom" />
+                            <RankInput.Item label="Excelente" value="excelente" />
+                        </RankInput>
+                    </Container>
                     
                     <Button type="submitForm" title="Enviar" action={() => sendInfo()} />
                 

@@ -30,6 +30,12 @@ const Container = styled.View`
     ${({ alignCenter }) => alignCenter ? `
         alignItems: center
     ` : ``}
+
+    ${({ input }) => input ? `
+        border: 1px solid transparent
+        borderBottomColor: #1D79C6
+        marginBottom: 40px
+    ` : ``}
 `
 const AppContainer = styled.KeyboardAvoidingView`
     flex: 1
@@ -65,8 +71,8 @@ const Input = styled.TextInput`
 const NameInput = styled(Input)``
 const EmailInput = styled(Input)``
 const CityInput = styled(Input)``
-const RankInput = styled(Input)`
-    marginBottom: 40px
+const RankInput = styled.Picker`
+    height: 40
 `
 
 export {
