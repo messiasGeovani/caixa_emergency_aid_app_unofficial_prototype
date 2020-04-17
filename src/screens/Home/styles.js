@@ -50,15 +50,6 @@ const Description = styled.Text`
         fontSize: 17px
         marginBottom: 20px
     ` : ``}
-
-    ${({ registerButton }) => registerButton ? `
-        fontSize: 16px
-    ` : ``}
-
-    ${({ statusButton }) => statusButton ? `
-        fontSize: 16px
-        color: #014682
-    ` : ``}
 `
 const Background = styled.Image.attrs({
     source: bg
@@ -71,21 +62,6 @@ const Logos = styled.Image.attrs({
 })`
     margin: 30px 10px
 `
-const Button = styled.TouchableOpacity`
-    padding: 13px 20px
-    borderRadius: 5px
-    marginBottom: 20px
-    elevation: 5
-    alignItems: center
-
-    ${({ register }) => register ? `
-        backgroundColor: #F29200
-    ` : ``}
-
-    ${({ status }) => status ? `
-        backgroundColor: rgba(255, 255, 255, 0.6)
-    ` : ``}
-`
 
 export {
     Container,
@@ -93,5 +69,4 @@ export {
     Description,
     Background,
     Logos,
-    Button
 }

@@ -8,10 +8,12 @@ import {
     Description,
     Background,
     Logos,
-    Button
 } from './styles';
 
-function Home() {
+// UI components
+import Button from '../../components/Button'
+
+function Home({ navigation }) {
     return (
         <>
             <Background />
@@ -37,16 +39,15 @@ function Home() {
                 </Container>
 
                 <Container buttons>
-                    <Button register>
-                        <Description registerButton>
-                            Realize sua solicitação
-                        </Description>
-                    </Button>
-                    <Button status>
-                        <Description statusButton>
-                            Acompanhe sua solicitação
-                        </Description>
-                    </Button>
+                    <Button 
+                        type="primary"
+                        title="Realize sua solicitação"
+                        action={() => navigation.push('Info')}
+                    />
+                    <Button 
+                        type="secondary" 
+                        title="Acompanhe sua solicitação" 
+                    />
                 </Container>
             </Container>
         </>
