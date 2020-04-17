@@ -42,7 +42,7 @@ function Home({ navigation }) {
                     <Button 
                         type="primary"
                         title="Realize sua solicitação"
-                        action={() => navigation.push('Info')}
+                        action={() => navigation.push('Register')}
                     />
                     <Button 
                         type="secondary" 

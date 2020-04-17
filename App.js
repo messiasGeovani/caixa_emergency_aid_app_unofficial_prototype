@@ -5,18 +5,13 @@ import React from 'react';
 // navigation config
 import { NavigationContainer } from '@react-navigation/native'
 
-// global styles
-import {
-  AppContainer
-} from './globalStyles'
-
 // routes
-import HomeRoutes from './src/routes/homeRoutes';
+import MainRoutes from './src/routes/MainRoutes';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <HomeRoutes />
+      <MainRoutes />
     </NavigationContainer>
   );
 }
