@@ -1,11 +1,16 @@
 // info screen component
-import React from 'react'
+import React, { useContext } from 'react'
+
+// main navigator consumer
+import { MainNavigatorContext } from '../../config/contexts'
+
 // styles
 import {
     Container,
     Title,
     Description,
-    InfoIcon
+    InfoIcon,
+    List
 } from './styles'
 
 // components
@@ -14,6 +19,7 @@ import Button from '../../components/Button'
 
 function Info({ navigation }) {
     const content = require('./content')
+    const mainNavigation = useContext(MainNavigatorContext)
 
     return (
         <>
@@ -23,23 +29,25 @@ function Info({ navigation }) {
             />
 
             <Container main>
-                {content.map(item => (
-                    <>
-                        <Container text>
-                            <InfoIcon />
-                            <Title>
-                                { item.title }
-                            </Title>
-                        </Container>
-                        <Description>
-                            { item.description }
-                        </Description>
-                    </>
-                ))}
+                <List>
+                    {content.map((item) => (
+                        <>
+                            <Container text>
+                                <InfoIcon />
+                                <Title>
+                                    { item.title }
+                                </Title>
+                            </Container>
+                            <Description>
+                                { item.description }
+                            </Description>
+                        </>
+                    ))}
+                </List>
 
                 <Container buttons>
-                    <Button type="back" title="Voltar" action={() => navigation.pop()} />
-                    <Button type="primary" title="Entendi, testar formulários" action={() => {}} />
+                    <Button type="back" title="Voltar" action={() => mainNavigation.goToHomeScreen()} />
+                    <Button type="primary" title="Entendi, testar formulários" action={() => navigation.navigate('RegisterScreen')} />
                 </Container>                
             </Container>
         </>

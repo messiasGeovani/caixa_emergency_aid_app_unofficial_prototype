@@ -35,9 +35,16 @@ const Btn = styled.TouchableOpacity`
 
     ${({ type }) => type === 'back' ? `
         padding: 20px 20px
+        width: 150px
+        alignSelf: center
         backgroundColor: transparent
         elevation: 0
     ` : ``}
+    ${({ type }) => type === 'submitForm' ? `
+        padding: 10px
+        backgroundColor: #609ACB
+        width: 100
+    ` : ``}    
 `
 
 export {
