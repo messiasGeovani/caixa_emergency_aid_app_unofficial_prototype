@@ -13,7 +13,7 @@ yarn
 
 ## Project estructure
 
-This project was created using the [react native framework](https://reactnative.dev/) conjunction with the [styled components](https://styled-components.com/) library:
+This project was created using the [react native framework](https://reactnative.dev/) in conjunction with the [styled components](https://styled-components.com/) library:
 
 ```
 ├── App.js
