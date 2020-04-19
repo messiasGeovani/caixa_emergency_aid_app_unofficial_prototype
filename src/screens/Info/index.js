@@ -47,7 +47,7 @@ function Info({ navigation }) {
 
                 <Container buttons>
                     <Button type="back" title="Voltar" action={() => mainNavigation.goToHomeScreen()} />
-                    <Button type="primary" title="Entendi, testar formulários" action={() => navigation.navigate('RegisterScreen')} />
+                    <Button type="primary" title="Entendi, avaliar este app" action={() => navigation.navigate('RegisterScreen')} />
                 </Container>                
             </Container>
         </>

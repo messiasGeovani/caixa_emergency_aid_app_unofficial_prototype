@@ -1,5 +1,5 @@
 // home screen component
-import React from 'react';
+import React, { useState } from 'react';
 
 // styles
 import {
@@ -10,13 +10,29 @@ import {
     Logos,
 } from './styles';
 
-// UI components
+// components
 import Button from '../../components/Button'
+import Alert from '../../components/Alert'
 
 function Home({ navigation }) {
+    // alert config
+    const [alert, setAlert] = useState(false)
+    
+    // dev profile info
+    const profileData = {
+        title: 'Descupe',
+        description: 'Este app é só um protótipo, portanto não tem todas as funcionalidades.\nPara se cadastrar no programa, use o app oficial.'
+    }
+
     return (
         <>
             <Background />
+
+            <Alert 
+                visible={alert}
+                info={profileData}
+                action={() => setAlert(false)}
+            />
 
             <Container main>
                 <Logos />
@@ -46,7 +62,8 @@ function Home({ navigation }) {
                     />
                     <Button 
                         type="secondary" 
-                        title="Acompanhe sua solicitação" 
+                        title="Acompanhe sua solicitação"
+                        action={() => setAlert(true)}
                     />
                 </Container>
             </Container>
