@@ -41,9 +41,9 @@ const Btn = styled.TouchableOpacity`
         elevation: 0
     ` : ``}
     ${({ type }) => type === 'submitForm' ? `
+        margin: 0 70px
         padding: 10px
         backgroundColor: #609ACB
-        width: 100
     ` : ``}    
 `
 

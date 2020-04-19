@@ -1,8 +1,11 @@
 // register screen component
-import React, { useState, createRef } from 'react'
+import React, { useState, createRef, useContext } from 'react'
 import {
     Platform
 } from 'react-native'
+
+// main navigator consumer
+import { MainNavigatorContext } from '../../config/contexts'
 
 // styles
 import {
@@ -22,27 +25,53 @@ import {
 import Header from '../../components/Header'
 import Button from '../../components/Button'
 import Loading from '../../components/Loading'
+import Alert from '../../components/Alert'
 
 function Register({ navigation }) {
     // user data
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [city, setCity] = useState('')
-    const [rank, setRank] = useState('Selecione uma nota')
+    const [rank, setRank] = useState('')
 
     // modal config
     const [loading, setLoading] = useState(false)
 
+    const [alert, setAlert] = useState(false)
+    const [alertData, setAlertData] = useState({
+        title: '',
+        description: ''
+    })
+
     // inputs
     const _emailInput = createRef()
     const _cityInput = createRef()
+
+    // main Navigation config
+    const mainNavigation = useContext(MainNavigatorContext)
     
     const content = require('./content')
 
     // send info method
     const sendInfo = () => {
-        setLoading(true)
-        setTimeout(() => setLoading(false), 500)
+
+        if (name === '' || email === '' || city === '' || rank === '') {
+            setAlertData({
+                title: 'Atenção',
+                description: 'Preencha todos os campos.'
+            })
+            setAlert(true)
+        } else {
+            setLoading(true)
+            setTimeout(() => {
+                setLoading(false)
+                setAlertData({
+                    title: 'Enviado!',
+                    description: 'Pode parecer um ato simples, mas você me ajudou muito.\nObrigado por avaliar este app, desejo muito sucesso pra você!'
+                })
+                setAlert(true)
+            }, 500)
+        }
     }
 
     return (
@@ -50,6 +79,14 @@ function Register({ navigation }) {
             <Container main>
 
                 <Loading visible={loading} />
+                <Alert 
+                    visible={alert} 
+                    info={alertData}
+                    action={() => {
+                        setAlert(false)
+                        alertData.title === 'Enviado!' ? mainNavigation.goToHomeScreen() : false
+                    }}
+                />
 
                 <Header 
                     title="Dados do cidadão" 
@@ -96,7 +133,7 @@ function Register({ navigation }) {
                             selectedValue={rank}
                             onValueChange={(value) => setRank(value)}
                         >
-                            <RankInput.Item color="rgba(0, 0, 0, 0.2)" label="Selecione uma nota" value={null} />
+                            <RankInput.Item color="rgba(0, 0, 0, 0.2)" label="Selecione uma nota" value={''} />
                             <RankInput.Item label="Péssimo" value="pessimo" />
                             <RankInput.Item label="Regular" value="regular" />
                             <RankInput.Item label="Bom" value="bom" />
