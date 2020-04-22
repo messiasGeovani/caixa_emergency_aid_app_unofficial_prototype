@@ -71,12 +71,22 @@ This project was created using the [react native framework](https://reactnative.
 
 The project contains the current routes:
 
-| Name    | Functionality                                               |
+| Route    | Description                                               |
 |--------|------------------------------------------------|
 | Home   | redirect the user to home screen               |
 | RegisterRoutesConfig | renders the redirect routes navigator |
 | InfoScreen | redirect the user to Info Screen |
 | RegisterScreen | redirect the user to register screen |
+
+- ### screens guide
+
+The project contains the current screens:
+
+| Screen    | Description                                               |
+|--------|------------------------------------------------|
+| Home   | Show the home info               |
+| Info | shows the information needed to register in the program  |
+| Register | shows the app rating form |
 
 ## Meta
 
