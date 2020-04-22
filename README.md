@@ -11,6 +11,10 @@ To install and config the project dependencies, is recommended the [yarn](https:
 yarn
 ```
 
+## Environment variables
+
+For the project to function properly, it is necessary to configure the environment variables in a ```.env.json``` file.
+
 ## Project estructure
 
 This project was created using the [react native framework](https://reactnative.dev/) in conjunction with the [styled components](https://styled-components.com/) library:
