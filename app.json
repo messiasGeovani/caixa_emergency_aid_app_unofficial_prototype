@@ -14,6 +14,13 @@
       "image": "./assets/splash.png",
       "resizeMode": "cover"
     },
+    "android": {
+      "package": "com.messiasgeovani.caixa_emercency_aid"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.messiasgeovani.caixa_emergency_aid"
+    },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
