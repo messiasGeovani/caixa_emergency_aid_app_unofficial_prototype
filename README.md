@@ -73,7 +73,7 @@ This project was created using the [react native framework](https://reactnative.
 
 - ### Routes guide
 
-The project contains the current routes:
+The project contains the current [routes](./src/routes/):
 
 | Route    | Description                                               |
 |--------|------------------------------------------------|
@@ -82,15 +82,34 @@ The project contains the current routes:
 | InfoScreen | redirect the user to Info Screen |
 | RegisterScreen | redirect the user to register screen |
 
-- ### screens guide
+- ### Screens guide
 
-The project contains the current screens:
+The project contains the current [screens](./src/screens/):
 
 | Screen    | Description                                               |
 |--------|------------------------------------------------|
 | Home   | Show the home info               |
 | Info | shows the information needed to register in the program  |
 | Register | shows the app rating form |
+
+- ### Components guide
+
+The project contains the following [components](./src/components/):
+
+| Component    | Description                                               |
+|--------|------------------------------------------------|
+| Alert   | Displays an alert modal containing the title and dercription |
+| Button | Displays a button that changes according to the props  |
+| Header | Displays a content header in the colors of the app |
+| Loading | Displays a loading modal |
+
+- ### Services guide
+
+The project contains the current [services](./src/services/):
+
+| Service    | Description                                               |
+|--------|------------------------------------------------|
+| rateApp   | Calls the endpoint in the API to evaluate the app |
 
 ## Meta
 
