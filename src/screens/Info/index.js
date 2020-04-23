@@ -43,12 +43,12 @@ function Info({ navigation }) {
                             </Description>
                         </>
                     ))}
-                </List>
 
-                <Container buttons>
-                    <Button type="back" title="Voltar" action={() => mainNavigation.goToHomeScreen()} />
-                    <Button type="primary" title="Entendi, avaliar este app" action={() => navigation.navigate('RegisterScreen')} />
-                </Container>                
+                    <Container buttons>
+                        <Button type="back" title="Voltar" action={() => mainNavigation.goToHomeScreen()} />
+                        <Button type="primary" title="Entendi, avaliar este app" action={() => navigation.navigate('RegisterScreen')} />
+                    </Container> 
+                </List>                               
             </Container>
         </>
     )

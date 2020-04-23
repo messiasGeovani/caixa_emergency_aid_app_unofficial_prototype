@@ -1,13 +1,15 @@
 // info screen styles
 import styled from 'styled-components/native'
 
+// global styles
+import metrics from '../../config/metrics'
+
 // icons
 import Icon from 'react-native-vector-icons/Feather'
 
 const Container = styled.View`
     ${({ buttons }) => buttons ? `
         margin: 0px 40px
-        marginTop: 40%
     ` : ``}    
 
     ${({ text }) => text ? `
@@ -29,7 +31,9 @@ const Description = styled.Text`
     marginBottom: 20px
     opacity: 0.5
 `
-const List = styled.ScrollView``
+const List = styled.ScrollView`
+    height: 65%
+`
 const InfoIcon = styled(Icon).attrs({
     size: 20,
     name: 'check-circle',
