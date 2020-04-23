@@ -7,6 +7,9 @@ import {
 // main navigator consumer
 import { MainNavigatorContext } from '../../config/contexts'
 
+// api methods
+import { rateApp } from '../../services/api'
+
 // styles
 import {
     AppContainer,
@@ -53,7 +56,7 @@ function Register({ navigation }) {
     const content = require('./content')
 
     // send info method
-    const sendInfo = () => {
+    const sendInfo = async () => {
 
         if (name === '' || email === '' || city === '' || rank === '') {
             setAlertData({
@@ -63,14 +66,34 @@ function Register({ navigation }) {
             setAlert(true)
         } else {
             setLoading(true)
-            setTimeout(() => {
+
+            try {
+                const data = {
+                    userName: name,
+                    userEmail: email,
+                    userCity: city,
+                    rankLevel: rank
+                }
+
+                await rateApp(data)
+                    .then(() => {
+                        setLoading(false)
+                        setAlertData({
+                            title: 'Enviado!',
+                            description: 'Pode parecer um ato simples, mas você me ajudou muito.\nObrigado por avaliar este app, desejo muito sucesso a você!'
+                        })
+                        setAlert(true)
+                        })
+            } catch (error) {
                 setLoading(false)
                 setAlertData({
-                    title: 'Enviado!',
-                    description: 'Pode parecer um ato simples, mas você me ajudou muito.\nObrigado por avaliar este app, desejo muito sucesso pra você!'
+                    title: 'Erro',
+                    description: 'Algo de errado aconteceu ao enviar as informações.\nMas não se preocupe, daremos um jeito.'
                 })
                 setAlert(true)
-            }, 500)
+                
+                console.log(error)
+            }
         }
     }
 
