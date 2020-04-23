@@ -60,7 +60,8 @@ const Background = styled.Image.attrs({
 const Logos = styled.Image.attrs({
     source: logos
 })`
-    margin: 30px 10px
+    margin: 30px 0
+    marginLeft: 20px
 `
 
 export {
