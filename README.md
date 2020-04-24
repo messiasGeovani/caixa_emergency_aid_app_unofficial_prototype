@@ -27,7 +27,8 @@ This project was created using the [react native framework](https://reactnative.
 │   ├── headerLogo.png
 │   ├── icon.png
 │   ├── logos.png
-│   └── splash.png
+│   ├── caixaIcon.png
+│   └── splashScreen.png
 ├── babel.config.js
 ├── package.json
 ├── src
