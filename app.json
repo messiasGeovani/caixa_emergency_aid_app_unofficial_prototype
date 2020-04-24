@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "caixa",
-    "slug": "caixa",
+    "name": "Auxílio Emergencial",
+    "slug": "caixa_emergency_app",
     "platforms": [
       "ios",
       "android",
@@ -11,8 +11,8 @@
     "orientation": "portrait",
     "icon": "./assets/caixaIcon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "cover"
+      "image": "./assets/splashScreen.png",
+      "backgroundColor": "#1E7AC7"
     },
     "android": {
       "package": "com.messiasgeovani.caixa_emercency_aid"
